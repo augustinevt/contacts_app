@@ -1,5 +1,5 @@
 class Contact
-  attr_reader :name, :addresses, :email, :phone
+  attr_reader :name, :addresses, :emails, :phones
 
   @@contacts = []
 
@@ -10,9 +10,20 @@ class Contact
   def initialize(attributes)
     @name = attributes[:name]
     @addresses = []
-    @email = []
-    @phone = []
+    @emails = []
+    @phones = []
   end
 
+  def add_address(address)
+    @addresses.push(address)
+  end
+
+  def add_phone(phone)
+    @phones.push(phone)
+  end
+
+  def add_email(email)
+    @emails.push(email)
+  end
 
 end
