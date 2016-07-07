@@ -1,6 +1,6 @@
 class Address
 
-  attr_reader :street_address
+  attr_reader :street_address, :city , :zip
 
   def initialize(attributes)
     @street_address = attributes[:street_address]

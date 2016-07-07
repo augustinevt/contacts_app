@@ -1,6 +1,15 @@
 <h1>Contact</h1>
 <h3><%=@contact.name()%></h3>
 
+<h3>Adresses</h3>
+<ul>
+  <%@contact.addresses().each do |address| %>
+    <li><%= address.street_address() %> </li>
+    <li><%= address.city() %> </li>
+    <li><%= address.zip() %> </li>
+  <%end%>
+</ul>
+
 <form action="/" class="" method="get">
   <button id="home" type="submit" class="btn btn-primary btn-lg" name="button">Home</button>
 </form>

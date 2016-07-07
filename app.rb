@@ -23,6 +23,14 @@ end
 
 post('/create_contact') do
   name = params[:name]
+
+  street_address = params[:street_address]
+  city = params[:city]
+  zip = params[:zip]
+
   contact = Contact.new({name: name})
+
+  contact.add_address(Address.new({street_address: street_address, city: city, zip: zip}))
+
   redirect "/contact/#{contact.id()}"
 end

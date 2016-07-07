@@ -27,4 +27,20 @@ describe 'new_contact route', {:type => :feature} do
     click_button('Add Contact')
     expect(page).to(have_content('Dilly'))
   end
+
+  it('should create new address object display it') do
+    visit('/new_contact')
+    fill_in("name", :with => "Dilly")
+    fill_in('street_address', :with => "123 Dogwood Stench lane")
+    fill_in('city', :with => "Chanchant")
+    fill_in('zip', :with => "23456")
+    click_button('Add Contact')
+    expect(page).to(have_content("123 Dogwood Stench lane"))
+  end
+
+  it('should create a new email object and display it' ) do
+    visit('/new_contact')
+    fill_in()
+  end
+
 end
