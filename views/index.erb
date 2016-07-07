@@ -1,0 +1,12 @@
+<h1>My Contacts</h1>
+
+<form action="/new_contact" class="" method="get">
+  <button id="new_contact" type="submit" class="btn btn-primary btn-lg" name="button">Add New Contact</button>
+</form>
+
+<h1>Existing Contacts</h1>
+<ul>
+  <% @contacts.each() do |contact| %>
+    <li><a href="/contact/<%= contact.id() %>"><%= contact.name() %></a></li>
+  <% end %>
+</ul>
